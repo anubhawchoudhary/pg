@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WP</title>
+    <script>
+        var total = 0;
+        function add(f, x) {
+            if (x < 0 || x > 100) {
+                alert("enter a number between 0 and 99");
+                document.getElementById(f).value = 0;
+            }
+            var count = document.getElementById(f).value;
+            total = total + (x * count);
+            document.getElementById("total").innerHTML = total;
+        }
+
+        function show() {
+            total = total + (total / 20);
+            alert("Total with tax:  " + total);
+            return false;
+        }
+    </script>
+</head>
+
+
+
+
+<body>
+    <h1>Friuts</h1>
+    <form onsubmit="return show()">
+        Apple<input type="text" id="apple" onchange="add('apple',59)" /> __________ </br>
+        Orange<input type="text" id="orange" onchange="add('orange',49)" />
+        </br>
+        Banana<input type="text" id="banana" onchange="add('banana',39)" />
+        </br>
+        <input type="submit">
+    </form>
+    </br>
+    <h2>Total:</h2>
+    <h1 id="total"></h1>
+</body>
+
+</html>

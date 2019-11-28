@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WP</title>
+    <script>
+        function move(x) {
+            var img = document.getElementById("img");
+            switch (x) {
+                case 1:
+                    img.style.top = "50px";
+                    img.style.left = "0px";
+                    break;
+                case 2:
+                    img.style.top = "50px";
+                    img.style.left = "1300px";
+                    break;
+                case 3:
+                    img.style.top = "575px";
+                    img.style.left = "0px";
+                    break;
+                case 4:
+                    img.style.top = "575px";
+                    img.style.left = "1300px";
+                    break;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="move(1)">NorthWest</button>
+    <button onclick="move(2)">NorthEast</button>
+    <button onclick="move(3)">SouthWest</button>
+    <button onclick="move(4)">SouthEast</button>
+    </br>
+    <img src="leaf.png" id="img" style="position:absolute; top:50px; left:0px">
+</body>
+
+</html>

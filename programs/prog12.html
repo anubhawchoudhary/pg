@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.s1{
+			background-color :red;
+			zIndex: 1;
+			position: absolute;
+			left:100px;
+			top: 50px;
+			height: 200px;
+			width: 300px;
+		}
+		.s2{
+			background-color :blue;
+			zIndex: 2;
+			position: absolute;
+			left:120px;
+			top: 70px;
+			height: 200px;
+			width: 300px;
+		}
+		.s3{
+			background-color :green;
+			zIndex: 3;
+			position: absolute;
+			left:140px;
+			top: 90px;
+			height: 200px;
+			width: 300px;
+		}
+	</style>
+	<script type="text/javascript">
+		var g;
+		function on(id){
+			g=document.getElementById(id).style.zIndex;
+			document.getElementById(id).style.zIndex=4;
+		}
+		function off(id){
+			document.getElementById(id).style.zIndex=g;
+		}
+	</script>
+</head>
+<body>
+	<div id="d1" class="s1" onmouseover="on('d1')" onmouseout="off('d1')">this is frame red.Taj Mahal. An immense mausoleum of white marble, built in Agra between 1631 and 1648 by order of the Mughal emperor Shah Jahan in memory of his </div>
+	<div id="d2" class="s2" onmouseover="on('d2')" onmouseout="off('d2')">this is frame blue</div>
+	<div id="d3" class="s3" onmouseover="on('d3')" onmouseout="off('d3')">this is frame green</div>
+</body>
+</html>

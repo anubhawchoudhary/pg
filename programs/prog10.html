@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var total=0;
+		function add(f,x){
+			if(document.getElementById(f).checked == 1){
+				total=total+x;
+			}else{
+				total=total-x;
+			}
+			
+		}
+		function disp(){
+			alert("total price is "+total);
+			return false;
+		}
+	</script>
+</head>
+<body>
+	<form onsubmit="return disp()">
+		
+		Apple<input type="checkbox" name="apple" id="apple" onclick="add('apple',49)"></br>
+		Orange<input type="checkbox" name="orange" id="orange" onclick="add('orange',35)"></br>
+		<input type="submit" name="sub">
+
+	</form>	
+</body>
+</html>

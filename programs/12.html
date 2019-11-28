@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Stacking</title>
+    <style type="text/css">
+        .card{
+            border: solid thick black;
+            width: 250px;
+            height: 250px;
+            position: absolute;
+        }
+
+        #one{
+            background-color: red;
+            z-index: 3;
+        }
+
+        #two{
+            background: blue;
+            top: 50px;
+            left: 50px;
+            z-index: 2;
+        }
+
+        #three{
+            background: green;
+            top: 100px;
+            left: 100px;
+            z-index: 1;
+        }
+    </style>
+    <script type="text/javascript">
+        var prev="one";
+        function moveit(id){
+            p = document.getElementById(id).style;
+            p.zIndex=5;
+            prev=id;
+        }
+        function goback(){
+            p = document.getElementById(prev).style;
+            switch(prev){
+                case "one": p.zIndex=3;
+                break;
+                case "two": p.zIndex=2;
+                break;
+                case "three": p.zIndex=1;
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p class="card" id="one" onmouseover="moveit('one');" onmouseout="goback();">This is 1st card</p>
+    <p class="card" id="two" onmouseover="moveit('two');" onmouseout="goback();">This is 2nd card</p>
+    <p class="card" id="three" onmouseover="moveit('three');" onmouseout="goback();">This is 3rd card</p>
+</body>
+
+</html>

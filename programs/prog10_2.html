@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var total=0;
+		function add(f,x){
+			
+			total=total+(x*document.getElementById(f).value);
+			
+		}
+		function disp(){
+			alert("total price is "+total);
+			return false;
+		}
+	</script>
+</head>
+<body>
+	<form onsubmit="return disp()">
+		
+		Apple<input type="text" name="apple" id="apple" onchange="add('apple',49)"></br>
+		Orange<input type="text" name="orange" id="orange" onchange="add('orange',35)"></br>
+		<input type="submit" name="sub">
+
+	</form>	
+</body>
+</html>
